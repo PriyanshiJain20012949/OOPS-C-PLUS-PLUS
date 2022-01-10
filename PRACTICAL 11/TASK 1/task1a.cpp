@@ -1,21 +1,24 @@
 #include<iostream>
-using namespace std;
-class A{
- public:
-     A(){
-     int x;
-     int y;}
-     };
-  class B:public A{
-  public:
-  void display(){
-  x=10;
-  y=35;
-  cout<<x<<endl<<y<<endl;}
-  
-  };
-  int main(){
-  
-  B obj;
-  
-  obj.display();}
+using namespace std ;
+class A
+{
+public :
+void displayA()
+{
+cout << "Class A Method called " << endl ;
+}
+};
+class B : protected A 
+{
+public :
+void displayB ()
+{
+cout << "Calling class A method from class B method" << endl ;
+displayA();
+}
+};
+int main ()
+{
+B obj ;
+obj.displayB();
+}
